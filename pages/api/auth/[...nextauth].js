@@ -52,6 +52,9 @@ export default NextAuth({
     }),
   ],
   secret: crypto.randomBytes(32).toString('hex'),
+  pages: {
+    signIn: "/auth/signin",
+  },
 
   callbacks: {
     async jwt({ token, user, account }) {
