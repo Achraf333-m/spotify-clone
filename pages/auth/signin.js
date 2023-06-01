@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function Signin({ providers }) {
-    const { data : session } = useSession()
+    const [loading, session] = useSession()
     const router = useRouter()
 
     useEffect(() => {
