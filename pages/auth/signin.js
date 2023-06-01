@@ -9,10 +9,10 @@ export default function Signin({ providers }) {
     const router = useRouter()
 
     useEffect(() => {
-        if (session) {
+        if (!loading && session) {
             router.push('/')
         }
-    }, [session])
+    }, [loading, session, router])
 
     if (session) return <Loader />
 
