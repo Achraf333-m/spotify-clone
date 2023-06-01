@@ -28,7 +28,7 @@ export default function Signin({ providers }) {
       />
       {Object.values(providers).map((provider) => (
         <div key={provider.id}>
-          <button onClick={() => signIn(provider.id)} className="text-white py-4 px-6 rounded-full bg-[#1db954] transition duration-300 ease-out border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]">
+          <button onClick={async()  => {await signIn(provider.id)}} className="text-white py-4 px-6 rounded-full bg-[#1db954] transition duration-300 ease-out border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]">
             Sign In with {provider.name}
           </button>
         </div>
