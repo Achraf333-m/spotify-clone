@@ -3,6 +3,7 @@ import Dashboard from '@/components/Dashboard'
 import Loader from '@/components/Loader'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import Head from "next/head";
 
 
 export default function Home() {
@@ -19,8 +20,11 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <div>
+     <Head>
+        <title>Spotify - Dashboard</title>
+      </Head>
     <Dashboard />
-    </main>
+    </div>
   )
 }
