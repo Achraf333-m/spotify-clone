@@ -5,14 +5,14 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function Signin({ providers }) {
-    const [loading, session] = useSession()
+    const {data: session} = useSession()
     const router = useRouter()
 
     useEffect(() => {
-        if (!loading && session) {
+        if (session) {
             router.push('/')
         }
-    }, [loading, session, router])
+    }, [session, router])
 
     if (session) return <Loader />
 
